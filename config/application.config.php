@@ -9,8 +9,8 @@ return array(
     'modules' => array(
         'Application',
         'ZendDeveloperTools',
-        'DoctrineORMModule',
         'DoctrineModule',
+        'DoctrineORMModule',
         'Book',
         'User'
     ),

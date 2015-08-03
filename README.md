@@ -1,3 +1,2 @@
 # library
-Project using ZF2 + Doctrine
-
+changing the project

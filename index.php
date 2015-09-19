@@ -38,7 +38,9 @@ $libsFrontEnd = "http://" . $_SERVER['SERVER_NAME']."/library/public/";
                 /**
                  * Function autoload
                  */
-                function __autoload( $file ) {}
+                function __autoload( $file ) {
+                    require_once('app/models/'.$file.'php');
+                }
 
                 require_once('framework/Controller.php');
                 require_once('app/controllers/'.$controller.'Controller.php');

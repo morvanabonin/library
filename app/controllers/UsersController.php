@@ -8,8 +8,8 @@ class Users extends Controller
     public function indexAction() {
         $db = new Users_Model();
         $db->create('users', array(
-            'username' => 'teste',
-            'password' => 'teste'
+            'username' => 'teste6',
+            'password' => 'teste6'
         ));
         //$this->view($this->_getClass(), 'index');
     }

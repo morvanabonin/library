@@ -20,7 +20,7 @@
             }
 
             $fields = implode(", ", $fields);
-            $values = "'". implode("', '", $values)."'";
+            $values = "'".implode("', '", $values)."'";
             try {
                 $sql = "INSERT INTO `{$table}` ({$fields}) VALUES ({$values})";
                 $this->db->query($sql);
@@ -31,7 +31,12 @@
 
         }
 
-        public function read() {}
+        public function read($table, $options = null) {
+            $options = (!is_null($options)) ? "WHERE {$options}" : "";
+            $sql = "SELECT * FROM `{$table}` {$options}";
+            $query = $this->db->query($sql);
+            $query->fetchAll();
+        }
 
         public function update() {}
 

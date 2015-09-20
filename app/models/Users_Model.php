@@ -2,7 +2,6 @@
     /**
     * class Users Model
     */
-    class Users extends Model
-    {
+    class Users_Model extends Model {
         
     }

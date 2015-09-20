@@ -35,13 +35,13 @@ $libsFrontEnd = "http://" . $_SERVER['SERVER_NAME']."/library/public/";
                 $controller = ucfirst($separator[0]);
                 $action = (!empty($separator[1]) ? $separator[1] :'index').'Action';
 
+                require_once('framework/Model.php');
                 /**
                  * Function autoload
                  */
                 function __autoload( $file ) {
-                    require_once('app/models/'.$file.'php');
+                    require_once('app/models/'.$file.'.php');
                 }
-
                 require_once('framework/Controller.php');
                 require_once('app/controllers/'.$controller.'Controller.php');
                 $app = new $controller();

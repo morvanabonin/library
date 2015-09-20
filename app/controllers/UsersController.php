@@ -6,8 +6,12 @@
 class Users extends Controller
 {
     public function indexAction() {
-        $db = new Produtos();
-        $this->view($this->_getClass(), 'index');
+        $db = new Users_Model();
+        $db->create('users', array(
+            'username' => 'teste',
+            'password' => 'teste'
+        ));
+        //$this->view($this->_getClass(), 'index');
     }
 
     public function addAction() {

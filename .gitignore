@@ -11,3 +11,4 @@ vendor
 data/docs
 composer.phar
 composer.lock
+.phpintel

@@ -1,6 +1,6 @@
 
 <?php
-$libsFrontEnd = "http://" . $_SERVER['SERVER_NAME']."/library/public/";
+    $libsFrontEnd = "http://" . $_SERVER['SERVER_NAME']."/library/public/";
 ?>
 <!DOCTYPE html>
 <html>

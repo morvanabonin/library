@@ -7,6 +7,10 @@ class Users extends Controller
 {
     public function indexAction() {
         $db = new Users_Model();
+        $db->create('users', array(
+           'username' => 'teste',
+           'password' => 'teste'
+         ));
         $db->read('users', 'id=27');
         //$this->view($this->_getClass(), 'index');
     }

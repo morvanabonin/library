@@ -1,0 +1,16 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "author": "Morvana Bonin",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "less": "^2.6.1",
+    "uglify-js": "^2.6.2"
+  }
+}

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 dest: 'assets/js/bootstrap.js',
             },
             angular: {
-                src: ['node_modules/angular/angular.js'],
+                src: ['node_modules/angular/angular.js', 'node_modules/angular-route/angular-route.js'],
                 dest: 'assets/libs/angular/angular.js'
             }
         },
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-
-  // Default task(s).
-  grunt.registerTask('default', ['less', 'concat', 'uglify', 'watch']);
+    // Default task(s).
+    grunt.registerTask('dev', ['less', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['less', 'concat', 'uglify']);
 }

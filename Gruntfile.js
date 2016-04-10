@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    'use strict';
     
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -16,6 +17,33 @@ module.exports = function(grunt) {
                 }
             }
         },
+        concat: {
+            bootstrap: {
+                src: ['assets/libs/jquery/jquery-1.12.3.js','node_modules/bootstrap/dist/js/bootstrap.js'],
+                dest: 'assets/js/bootstrap.js',
+            },
+            angular: {
+                src: ['node_modules/angular/angular.js'],
+                dest: 'assets/libs/angular/angular.js'
+            }
+        },
+        uglify: {
+            options: {
+                compress: {
+                    warnings: false
+                },
+                mangle: true,
+                preserveComments: /^!|@preserve|@license|@cc_on/i
+            },
+            core: {
+                src: '<%= concat.bootstrap.dest %>',
+                dest: 'dist/js/bootstrap.min.js'
+            },
+            angular: {
+                src: '<%= concat.angular.dest %>',
+                dest: 'dist/js/angular.min.js'
+            }
+        },
         watch: {
             styles: {
                 files: ['assets/less/allura.less'],
@@ -28,9 +56,13 @@ module.exports = function(grunt) {
     });
 
     // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+
 
   // Default task(s).
-  grunt.registerTask('default', ['less', 'watch']);
+  grunt.registerTask('default', ['less', 'concat', 'uglify', 'watch']);
 }

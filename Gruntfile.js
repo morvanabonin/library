@@ -23,7 +23,10 @@ module.exports = function(grunt) {
                 dest: 'assets/js/bootstrap.js',
             },
             angular: {
-                src: ['node_modules/angular/angular.js', 'node_modules/angular-route/angular-route.js'],
+                src: ['node_modules/angular/angular.js',
+                      'node_modules/angular-route/angular-route.js',
+                      'node_modules/angular-cookies/angular-cookies.js'
+                ],
                 dest: 'assets/libs/angular/angular.js'
             }
         },

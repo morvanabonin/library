@@ -1,9 +1,10 @@
 {
-  "name": "library",
+  "name": "allura-library",
   "version": "1.0.0",
   "author": "Morvana Bonin",
   "dependencies": {
     "angular": "^1.5.3",
+    "angular-cookies": "^1.5.5",
     "angular-route": "^1.5.3",
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.5.0",

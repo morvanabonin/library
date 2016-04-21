@@ -1,0 +1,37 @@
+<div class="col-lg-6 col-md-offset-3">
+    <div class="alert alert-info">
+        Username: test<br />
+        Password: test
+    </div>
+    <div ng-show="error" class="alert alert-danger">{{error}}</div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">
+                Login
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-sm-12">
+                <form class="form-horizontal" name="form" ng-submit="login()" role="form">
+                    <div class="form-group">
+                        <label class="username" for="username"></label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                            <input type="text" class="form-control input-lg" id="username" ng-model="username" placeholder="User" required>
+                            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Nome de usuário é necessário</span>
+                        </div>
+                        <label class="password" for="password"></label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                            <input type="password" name="password" id="password" class="form-control input-lg" id="password" ng-model="password" placeholder="Password" required>
+                            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Senha de usuário é necessária</span>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary btn-lg col-sm-6">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

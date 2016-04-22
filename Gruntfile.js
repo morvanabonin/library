@@ -47,6 +47,24 @@ module.exports = function(grunt) {
                 dest: 'dist/js/angular.min.js'
             }
         },
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'node_modules/font-awesome/fonts/',
+                        src: '**',
+                        dest: 'dist/fonts/',
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/bootstrap/fonts/',
+                        src: '**',
+                        dest: 'dist/fonts/',
+                    },
+                ],
+            },
+        },
         watch: {
             styles: {
                 files: ['assets/less/allura.less'],
@@ -62,10 +80,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 
     // Default task(s).
     grunt.registerTask('dev', ['less', 'concat', 'uglify', 'watch']);
-    grunt.registerTask('default', ['less', 'concat', 'uglify']);
+    grunt.registerTask('default', ['less', 'concat', 'uglify', 'copy']);
 }

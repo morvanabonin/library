@@ -1,35 +1,26 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="HomeController">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Allura</a>
+<div ng-controller="HomeCtrl">
+    <div class="col-xs-4 col-md-4">
+        <div class="panel panel-warning">
+            <div class="panel-heading">Livro Emprestado</div>
+            <div class="panel-body">
+                <p>Nome do livro</p>
+            </div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#about">Livros</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="../navbar/">Logout</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
     </div>
-</nav>
-<div class="container">
-
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <h1>Projeto Allura Library</h1>
-        <p>Projeto para a cadeira de Programação para Internet II. </p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Saiba mais »</a>
-        </p>
-
+    <div class="col-xs-4 col-md-4">
+        <div class="panel panel-warning">
+            <div class="panel-heading">Data de Entrega</div>
+            <div class="panel-body">
+                <p>Data</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-4">
+        <div class="panel panel-warning">
+            <div class="panel-heading">Total de livros já retirados</div>
+            <div class="panel-body">
+                <p>8</p>
+            </div>
+        </div>
     </div>
 </div>

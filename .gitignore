@@ -1,5 +1,7 @@
+build.xml
 node_modules/
 .idea/
 data/
 default.conf
 docker-compose.yml
+nbproject/

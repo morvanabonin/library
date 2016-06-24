@@ -1,12 +1,12 @@
-package com.senac.seriadomodel.rest;
+package com.senac.allura.rest;
 
 import com.google.gson.Gson;
-import com.senac.seriadomodel.bean.Genero;
-import com.senac.seriadomodel.bean.Seriado;
-import com.senac.seriadomodel.crud.CrudGenericoRest;
-import com.senac.seriadomodel.crud.ErroRest;
-import com.senac.seriadomodel.crud.RNException;
-import com.senac.seriadomodel.rn.GeneroRN;
+import com.senac.allura.bean.Genero;
+import com.senac.allura.bean.Seriado;
+import com.senac.allura.crud.CrudGenericoRest;
+import com.senac.allura.crud.ErroRest;
+import com.senac.allura.crud.RNException;
+import com.senac.allura.rn.GeneroRN;
 import java.net.URI;
 import java.util.List;
 import javax.ws.rs.Path;

@@ -1,4 +1,4 @@
-package com.senac.seriadomodel.crud;
+package com.senac.allura.crud;
 
 import java.util.List;
 

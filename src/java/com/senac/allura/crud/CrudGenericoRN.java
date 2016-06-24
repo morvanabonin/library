@@ -1,4 +1,4 @@
-package com.senac.seriadomodel.crud;
+package com.senac.allura.crud;
 
 public abstract class CrudGenericoRN<T> implements CrudGenerico<T> {
 

@@ -1,4 +1,4 @@
-package com.senac.seriadomodel.auth;
+package com.senac.allura.auth;
 
 import java.util.Calendar;
 import java.util.HashMap;

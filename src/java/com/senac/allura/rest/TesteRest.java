@@ -1,35 +1,30 @@
-package com.senac.seriadomodel.rest;
+package com.senac.allura.rest;
 
 import com.google.gson.Gson;
-import com.senac.seriadomodel.bean.Genero;
-import com.senac.seriadomodel.bean.Seriado;
-import com.senac.seriadomodel.crud.CrudGenericoRest;
-import com.senac.seriadomodel.crud.ErroRest;
-import com.senac.seriadomodel.crud.RNException;
-import com.senac.seriadomodel.rn.SeriadoRN;
+import com.senac.allura.bean.Teste;
+import com.senac.allura.crud.CrudGenericoRest;
+import com.senac.allura.crud.ErroRest;
+import com.senac.allura.crud.RNException;
+import com.senac.allura.rn.TesteRN;
 import java.net.URI;
 import java.util.List;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
-/**
- *
- * @author lossurdo
- */
-@Path("/seriados")
-public class SeriadoRest extends CrudGenericoRest<Seriado> {
+@Path("/testes")
+public class TesteRest extends CrudGenericoRest<Teste> {
 
-    private final SeriadoRN rn;
+    private final TesteRN rn;
 
-    public SeriadoRest() {
-        this.rn = new SeriadoRN();
+    public TesteRest() {
+        rn = new TesteRN();
     }
 
     @Override
     public Response consultarPK(String pk) {
         try {
-            Seriado s = rn.consultar(new Seriado(Integer.parseInt(pk)));
-            return Response.ok(s).build();
+            Teste t = rn.consultar(new Teste(Integer.parseInt(pk)));
+            return Response.ok(t).build();
         } catch (RNException e) {
             return exceptionParaResponse(e);
         }
@@ -38,19 +33,9 @@ public class SeriadoRest extends CrudGenericoRest<Seriado> {
     @Override
     public Response pesquisar(String q) {
         try {
-            List<Seriado> ret = rn.pesquisar(q);
+            List<Teste> ret = rn.pesquisar(q);
 
-            /*
-                Remove a lista circular; seriado aponta pra gênero
-                e gênero aponta pra seriado; Gson gera exceção.
-            */
-            for (Seriado seriado : ret) {
-                for(Genero genero : seriado.getGeneros()) {
-                    genero.setSeriados(null);
-                }
-            }
-
-            return gerarResponseParaCollection(ret);
+            return gerarResponseParaCollection(ret);    
         } catch (RNException e) {
             return exceptionParaResponse(e);
         }
@@ -59,7 +44,7 @@ public class SeriadoRest extends CrudGenericoRest<Seriado> {
     @Override
     public Response excluirPK(String pk) {
         try {
-            rn.excluir(new Seriado(Integer.parseInt(pk)));
+            rn.excluir(new Teste(Integer.parseInt(pk)));
             return Response.ok().build();
         } catch (RNException e) {
             return exceptionParaResponse(e);
@@ -69,7 +54,7 @@ public class SeriadoRest extends CrudGenericoRest<Seriado> {
     @Override
     public Response salvar(String obj) {
         try {
-            Seriado o = rn.salvar(new Gson().fromJson(obj, Seriado.class));
+            Teste o = rn.salvar(new Gson().fromJson(obj, Teste.class));
             URI uri = uriInfo.getAbsolutePathBuilder().path(Integer.toString(o.getId())).build();
             return Response.created(uri).build();
         } catch (RNException e) {
@@ -80,7 +65,7 @@ public class SeriadoRest extends CrudGenericoRest<Seriado> {
     @Override
     public Response alterar(String obj) {
         try {
-            Seriado o = rn.alterar(new Gson().fromJson(obj, Seriado.class));
+            Teste o = rn.alterar(new Gson().fromJson(obj, Teste.class));
             URI uri = uriInfo.getAbsolutePathBuilder().path(Integer.toString(o.getId())).build();
             return Response.created(uri).build();
         } catch (RNException e) {
@@ -89,11 +74,11 @@ public class SeriadoRest extends CrudGenericoRest<Seriado> {
     }
 
     @Override
-    protected Response gerarResponseParaCollection(List<Seriado> obj) {
+    protected Response gerarResponseParaCollection(List<Teste> obj) {
         if (obj == null) {
             return Response.status(Response.Status.NOT_FOUND)
-                    .entity(toJSON(new ErroRest("Nenhum registro disponível; lista vazia")))
-                    .build();
+                .entity(toJSON(new ErroRest("Nenhum registro disponível; lista vazia")))
+                .build();
         }
 
         return Response.ok(new Gson().toJson(obj)).build();

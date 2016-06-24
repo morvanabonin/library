@@ -1,4 +1,4 @@
-package com.senac.seriadomodel.rest;
+package com.senac.allura.rest;
 
 import java.io.IOException;
 import javax.ws.rs.container.ContainerRequestContext;

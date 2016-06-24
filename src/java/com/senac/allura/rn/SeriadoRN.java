@@ -1,9 +1,9 @@
-package com.senac.seriadomodel.rn;
+package com.senac.allura.rn;
 
-import com.senac.seriadomodel.bd.SeriadoBD;
-import com.senac.seriadomodel.bean.Seriado;
-import com.senac.seriadomodel.crud.CrudGenericoRN;
-import com.senac.seriadomodel.crud.RNException;
+import com.senac.allura.bd.SeriadoBD;
+import com.senac.allura.bean.Seriado;
+import com.senac.allura.crud.CrudGenericoRN;
+import com.senac.allura.crud.RNException;
 import java.util.List;
 import org.apache.commons.lang.StringUtils;
 

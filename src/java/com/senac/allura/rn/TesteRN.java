@@ -1,8 +1,8 @@
-package com.senac.seriadomodel.rn;
+package com.senac.allura.rn;
 
-import com.senac.seriadomodel.bd.TesteBD;
-import com.senac.seriadomodel.bean.Teste;
-import com.senac.seriadomodel.crud.CrudGenericoRN;
+import com.senac.allura.bd.TesteBD;
+import com.senac.allura.bean.Teste;
+import com.senac.allura.crud.CrudGenericoRN;
 import java.util.List;
 
 /**

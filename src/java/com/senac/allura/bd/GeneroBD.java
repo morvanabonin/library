@@ -1,7 +1,7 @@
-package com.senac.seriadomodel.bd;
+package com.senac.allura.bd;
 
-import com.senac.seriadomodel.bean.Genero;
-import com.senac.seriadomodel.crud.CrudGenericoBD;
+import com.senac.allura.bean.Genero;
+import com.senac.allura.crud.CrudGenericoBD;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

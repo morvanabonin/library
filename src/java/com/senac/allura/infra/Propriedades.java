@@ -1,4 +1,4 @@
-package com.senac.seriadomodel.infra;
+package com.senac.allura.infra;
 
 import java.io.FileInputStream;
 import java.util.Properties;

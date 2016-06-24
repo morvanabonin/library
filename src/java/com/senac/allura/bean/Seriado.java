@@ -1,4 +1,4 @@
-package com.senac.seriadomodel.bean;
+package com.senac.allura.bean;
 
 import java.io.Serializable;
 import java.util.List;

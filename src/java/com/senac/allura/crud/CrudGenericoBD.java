@@ -1,6 +1,6 @@
-package com.senac.seriadomodel.crud;
+package com.senac.allura.crud;
 
-import com.senac.seriadomodel.infra.Propriedades;
+import com.senac.allura.infra.Propriedades;
 import java.lang.reflect.Field;
 import java.util.List;
 import javax.persistence.EntityManager;

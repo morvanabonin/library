@@ -1,4 +1,4 @@
-package com.senac.seriadomodel.rest;
+package com.senac.allura.rest;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

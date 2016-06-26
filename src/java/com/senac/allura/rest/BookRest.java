@@ -3,53 +3,54 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.senac.allura.rn;
+package com.senac.allura.rest;
 
-import com.senac.allura.bd.AuthorBD;
-import com.senac.allura.bean.Author;
-import com.senac.allura.crud.CrudGenericoRN;
+import com.senac.allura.bean.Book;
+import com.senac.allura.crud.CrudGenericoRest;
+import com.senac.allura.rn.BookRN;
 import java.util.List;
+import javax.ws.rs.core.Response;
 
 /**
- * Business Rule Author
+ * Class BookRest
  * @author morvanabonin
  */
-public class AuthorRN extends CrudGenericoRN<Author> {
+public class BookRest extends CrudGenericoRest<Book> {
     
-    private final AuthorBD crudBD;
+    private final BookRN rn;
 
-    public AuthorRN() {
-        crudBD = new AuthorBD();
+    public BookRest() {
+        rn = new BookRN();
     }
 
     @Override
-    public Author consultar(Author bean) {
-        return null;
-    }
-
-    @Override
-    public boolean excluir(Author bean) {
+    public Response consultarPK(String pk) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Author salvar(Author bean) {
+    public Response pesquisar(String q) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Author alterar(Author bean) {
+    public Response excluirPK(String pk) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Author> pesquisar(Author bean) {
+    public Response salvar(String obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Author> pesquisar(String valor) {
+    public Response alterar(String obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    protected Response gerarResponseParaCollection(List<Book> obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   
 }

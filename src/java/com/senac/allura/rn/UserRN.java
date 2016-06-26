@@ -11,7 +11,7 @@ import com.senac.allura.crud.CrudGenericoRN;
 import java.util.List;
 
 /**
- *
+ * Business Rule User
  * @author morvanabonin
  */
 public class UserRN extends CrudGenericoRN<User> {

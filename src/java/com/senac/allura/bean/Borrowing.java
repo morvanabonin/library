@@ -12,18 +12,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
+ * Entity Borrowing
+ * 
  * @author morvanabonin
  */
 @Entity
-public class Author implements Serializable {
+public class Borrowing implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String name;
+    private User user;
+    private Book book;
+    private String request;
+    private String renewal;
+    private String devolution;
 
     public Long getId() {
         return id;
@@ -33,12 +38,44 @@ public class Author implements Serializable {
         this.id = id;
     }
     
-    public String getName() {
-        return name;
+    public User getUser() {
+        return user;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public String getRequest() {
+        return request;
+    }
+
+    public void setRequest(String request) {
+        this.request = request;
+    }
+
+    public String getRenewal() {
+        return renewal;
+    }
+
+    public void setRenewal(String renewal) {
+        this.renewal = renewal;
+    }
+
+    public String getDevolution() {
+        return devolution;
+    }
+
+    public void setDevolution(String devolution) {
+        this.devolution = devolution;
     }
 
     @Override
@@ -51,10 +88,10 @@ public class Author implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Author)) {
+        if (!(object instanceof Borrowing)) {
             return false;
         }
-        Author other = (Author) object;
+        Borrowing other = (Borrowing) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -63,7 +100,7 @@ public class Author implements Serializable {
 
     @Override
     public String toString() {
-        return "com.senac.allura.bean.Author[ id=" + id + " ]";
+        return "com.senac.allura.bean.Borrowing[ id=" + id + " ]";
     }
     
 }

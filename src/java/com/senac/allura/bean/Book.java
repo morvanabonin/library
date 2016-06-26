@@ -12,7 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
+ * Entity Book
+ * 
  * @author morvanabonin
  */
 @Entity
@@ -22,6 +23,13 @@ public class Book implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    private String title;
+    private String year;
+    private String ISBN;
+    private String subjects;
+    private String path_img;
+    private boolean isAvailable;
 
     public Long getId() {
         return id;
@@ -29,6 +37,54 @@ public class Book implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+     public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public String getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(String subjects) {
+        this.subjects = subjects;
+    }
+
+    public String getPath_img() {
+        return path_img;
+    }
+
+    public void setPath_img(String path_img) {
+        this.path_img = path_img;
+    }
+
+    public boolean isIsAvailable() {
+        return isAvailable;
+    }
+
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 
     @Override
@@ -55,5 +111,4 @@ public class Book implements Serializable {
     public String toString() {
         return "com.senac.allura.bean.Book[ id=" + id + " ]";
     }
-    
 }

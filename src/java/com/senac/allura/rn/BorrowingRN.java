@@ -11,7 +11,7 @@ import com.senac.allura.crud.CrudGenericoRN;
 import java.util.List;
 
 /**
- *
+ * Business Rule Borrowing
  * @author morvanabonin
  */
 public class BorrowingRN extends CrudGenericoRN<Borrowing> {

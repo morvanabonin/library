@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mysqlframe:
+    image: library/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=4llur4
+    - MYSQL_DATABASE=allura
+    - MYSQL_USER=allura
+    - MYSQL_PASSWORD=4llur4
+    volumes:
+    - ./data/sql/:/data/sql/generate-db-allura.sql
+    ports:
+    - "3307:3306"

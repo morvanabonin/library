@@ -8,21 +8,30 @@ package com.senac.allura.bd;
 import com.senac.allura.bean.Book;
 import com.senac.allura.crud.CrudGenericoBD;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
- * 
+ * Model class of Book
  * @author morvanabonin
  */
 public class BookBD extends CrudGenericoBD<Book> {
 
     @Override
-    public List<Book> pesquisar(Book bean) {
-        return null;
+    public List<Book> pesquisar(String title) {
+        EntityManager em = createEntityManager();        
+        try {
+            Query query = em.createNamedQuery("Book.findByBook");
+            query.setParameter("title", "%" + title + "%");
+            return query.getResultList();
+        } finally {
+            em.close();        
+        }
     }
 
     @Override
-    public List<Book> pesquisar(String valor) {
-        return null;
+    public List<Book> pesquisar(Book bean) {
+        return pesquisar(bean.getTitle());
     }
-    
+
 }

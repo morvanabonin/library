@@ -18,11 +18,11 @@ import javax.persistence.Query;
 public class BookBD extends CrudGenericoBD<Book> {
 
     @Override
-    public List<Book> pesquisar(String title) {
+    public List<Book> pesquisar(String valor) {
         EntityManager em = createEntityManager();        
         try {
             Query query = em.createNamedQuery("Book.findByBook");
-            query.setParameter("title", "%" + title + "%");
+            query.setParameter("title", "%" + valor + "%");
             return query.getResultList();
         } finally {
             em.close();        

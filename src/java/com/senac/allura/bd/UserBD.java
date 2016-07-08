@@ -8,6 +8,8 @@ package com.senac.allura.bd;
 import com.senac.allura.bean.User;
 import com.senac.allura.crud.CrudGenericoBD;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  * Model class of User
@@ -16,13 +18,22 @@ import java.util.List;
 public class UserBD extends CrudGenericoBD<User> {
 
     @Override
-    public List<User> pesquisar(User bean) {
-        return null;
+    public List<User> pesquisar(String valor) {
+        EntityManager em = createEntityManager();
+        try {
+            Query query = em.createNamedQuery("User.findByUser");
+            query.setParameter("name", "%" + valor + "%");
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
     }
 
     @Override
-    public List<User> pesquisar(String valor) {
-        return null;
+    public List<User> pesquisar(User bean) {
+        return pesquisar(bean.getName());
     }
+
+
     
 }
